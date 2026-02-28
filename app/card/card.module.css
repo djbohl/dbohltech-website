@@ -194,6 +194,22 @@
   border-color: #00e5ff;
 }
 
+/* ── MOBILE ────────────────────────────────────────── */
+@media (max-width: 420px) {
+  .page { padding: 70px 16px 50px; gap: 28px; }
+
+  .card {
+    width: calc(100vw - 32px);
+    height: auto;
+    min-height: 170px;
+    padding: 20px 22px;
+  }
+
+  .name { font-size: 2rem; }
+
+  .divider { width: calc(100vw - 32px); }
+}
+
 /* ── PRINT ─────────────────────────────────────────── */
 @media print {
   .printBtn { display: none !important; }
