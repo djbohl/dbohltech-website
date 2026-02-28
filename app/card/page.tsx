@@ -14,6 +14,12 @@ const bebas = Bebas_Neue({
 export default function CardPage() {
   return (
     <main className={`${styles.page} ${bebas.variable}`}>
+      <style>{`
+        @media print {
+          nav, footer { display: none !important; }
+          body { background: white !important; }
+        }
+      `}</style>
 
       {/* ── Business Card ─── */}
       <div className={styles.cardWrap}>
@@ -21,8 +27,8 @@ export default function CardPage() {
           <div className={styles.glow} />
 
           <div className={styles.top}>
-            <div className={styles.name}>Donna Bohl</div>
-            <div className={styles.title}>DBohlTech</div>
+            <div className={styles.name}>DBOHLTECH</div>
+            <div className={styles.title}>Donna Bohl</div>
           </div>
 
           <div className={styles.bottom}>

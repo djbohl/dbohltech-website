@@ -196,11 +196,7 @@
 
 /* ── PRINT ─────────────────────────────────────────── */
 @media print {
-  :global(nav) { display: none !important; }
-  :global(footer) { display: none !important; }
   .printBtn { display: none !important; }
-
-  :global(body) { background: white; }
 
   .page { padding: 20px; gap: 20px; }
 
