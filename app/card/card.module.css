@@ -1,0 +1,230 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 80px 20px 60px;
+}
+
+/* ── BUSINESS CARD ─────────────────────────────────── */
+.cardWrap { perspective: 1000px; }
+
+.card {
+  width: 3.5in;
+  height: 2in;
+  background: #0d0d0d;
+  border: 1px solid #1e1e1e;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 0 1px #111, 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: rotateY(-4deg) rotateX(2deg) translateY(-4px);
+  box-shadow: 0 0 0 1px #222, 0 40px 80px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00e5ff 0%, #0099ff 60%, transparent 100%);
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.glow {
+  position: absolute;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+  top: -60px; right: -40px;
+  pointer-events: none;
+}
+
+.top { position: relative; z-index: 1; }
+
+.name {
+  font-family: var(--font-bebas), sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  line-height: 1;
+  text-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
+}
+
+.title {
+  font-size: 0.6rem;
+  font-weight: 300;
+  letter-spacing: 0.25em;
+  color: #00e5ff;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+.bottom {
+  position: relative; z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.contacts { display: flex; flex-direction: column; gap: 3px; }
+
+.contactItem {
+  font-size: 0.52rem;
+  font-weight: 300;
+  color: #666;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+
+.card:hover .contactItem { color: #888; }
+
+.dot {
+  width: 3px; height: 3px;
+  border-radius: 50%;
+  background: #00e5ff;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.github { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.githubLabel { font-size: 0.42rem; letter-spacing: 0.2em; color: #333; text-transform: uppercase; }
+.githubHandle { font-size: 0.58rem; color: #555; letter-spacing: 0.05em; font-weight: 400; }
+.github svg { width: 16px; height: 16px; fill: #444; display: block; margin-left: auto; margin-bottom: 2px; }
+
+/* ── DIVIDER ───────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 3.5in;
+}
+.dividerLine { flex: 1; height: 1px; background: #1e1e1e; }
+.dividerText { font-size: 0.45rem; letter-spacing: 0.25em; color: #2a2a2a; text-transform: uppercase; }
+
+/* ── QR SHARE PANEL ────────────────────────────────── */
+.sharePanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.shareLabel {
+  font-size: 0.45rem;
+  letter-spacing: 0.3em;
+  color: #2a2a2a;
+  text-transform: uppercase;
+}
+
+.qrBracket {
+  position: relative;
+  padding: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bracketCorner {
+  position: absolute;
+  width: 20px; height: 20px;
+  border-color: #00e5ff;
+  border-style: solid;
+  opacity: 0.65;
+  transition: opacity 0.3s;
+}
+
+.qrBracket:hover .bracketCorner { opacity: 1; }
+
+.bracketCorner.tl { top: 0; left: 0; border-width: 2px 0 0 2px; }
+.bracketCorner.tr { top: 0; right: 0; border-width: 2px 2px 0 0; }
+.bracketCorner.bl { bottom: 0; left: 0; border-width: 0 0 2px 2px; }
+.bracketCorner.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
+
+.qrUrl {
+  font-size: 0.46rem;
+  letter-spacing: 0.18em;
+  color: #00e5ff;
+  opacity: 0.45;
+  text-align: center;
+}
+
+/* ── PRINT BUTTON ──────────────────────────────────── */
+.printBtn {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #444;
+  background: transparent;
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.printBtn:hover {
+  color: #00e5ff;
+  border-color: #00e5ff;
+}
+
+/* ── PRINT ─────────────────────────────────────────── */
+@media print {
+  :global(nav) { display: none !important; }
+  :global(footer) { display: none !important; }
+  .printBtn { display: none !important; }
+
+  :global(body) { background: white; }
+
+  .page { padding: 20px; gap: 20px; }
+
+  .card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .card::before {
+    background: linear-gradient(90deg, #0099cc 0%, #006699 60%, transparent 100%);
+  }
+
+  .card::after { display: none; }
+  .glow { display: none; }
+
+  .name { color: #000; text-shadow: none; }
+  .title { color: #0099cc; }
+  .contactItem { color: #555; }
+  .github svg { fill: #777; }
+  .githubHandle { color: #777; }
+  .githubLabel { color: #aaa; }
+  .dividerLine { background: #eee; }
+  .dividerText { color: #bbb; }
+  .shareLabel { color: #bbb; }
+  .bracketCorner { border-color: #0099cc; opacity: 0.8; }
+  .qrUrl { color: #0099cc; opacity: 0.7; }
+}
