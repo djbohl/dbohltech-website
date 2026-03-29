@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
   const isHome = pathname === '/'
 
@@ -15,34 +16,102 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close menu on route change
+  useEffect(() => { setMenuOpen(false) }, [pathname])
+
+  // Lock body scroll when menu open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [menuOpen])
+
+  const navLinks = [
+    { label: 'Services', href: isHome ? '#services' : '/#services' },
+    { label: 'Work',     href: isHome ? '#work'     : '/#work'     },
+    { label: 'About',    href: isHome ? '#about'    : '/#about'    },
+    { label: 'Blog',     href: '/blog'                              },
+  ]
+
   return (
-    <nav className={scrolled ? 'scrolled' : ''}>
-      <Link href="/" className="logo">
-        db<span>.</span>tech
-      </Link>
-      <ul>
-        {isHome ? (
-          <>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-          </>
-        ) : (
-          <>
-            <li><Link href="/#services">Services</Link></li>
-            <li><Link href="/#work">Work</Link></li>
-            <li><Link href="/#about">About</Link></li>
-          </>
-        )}
-        <li><Link href="/blog">Blog</Link></li>
-        <li>
-          {isHome ? (
-            <a href="#contact" className="nav-cta">Let&apos;s Talk</a>
-          ) : (
-            <Link href="/#contact" className="nav-cta">Let&apos;s Talk</Link>
-          )}
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className={scrolled ? 'scrolled' : ''}>
+        <Link href="/" className="logo">
+          db<span>.</span>tech
+        </Link>
+
+        {/* Desktop links */}
+        <ul className="nav-desktop">
+          {navLinks.map(({ label, href }) => (
+            <li key={label}>
+              {href.startsWith('#') || href.startsWith('/#') ? (
+                <a href={href}>{label}</a>
+              ) : (
+                <Link href={href}>{label}</Link>
+              )}
+            </li>
+          ))}
+          <li>
+            {isHome ? (
+              <a href="#contact" className="nav-cta">Let&apos;s Talk</a>
+            ) : (
+              <Link href="/#contact" className="nav-cta">Let&apos;s Talk</Link>
+            )}
+          </li>
+        </ul>
+
+        {/* Hamburger — mobile only */}
+        <button
+          className={`nav-hamburger${menuOpen ? ' open' : ''}`}
+          onClick={() => setMenuOpen((v) => !v)}
+          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </nav>
+
+      {/* Overlay */}
+      <div
+        className={`nav-mobile-overlay${menuOpen ? ' open' : ''}`}
+        onClick={() => setMenuOpen(false)}
+        aria-hidden="true"
+      />
+
+      {/* Glass slide-in panel */}
+      <div className={`nav-mobile-panel${menuOpen ? ' open' : ''}`} aria-hidden={!menuOpen}>
+        <div className="nav-mobile-inner">
+
+          {/* Big staggered nav links */}
+          <nav className="nav-mobile-links">
+            {navLinks.map(({ label, href }, i) => (
+              <a
+                key={label}
+                href={href}
+                className="nav-mobile-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                <span className="nav-mobile-num">0{i + 1}</span>
+                {label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Gradient CTA */}
+          <a
+            href={isHome ? '#contact' : '/#contact'}
+            className="nav-mobile-cta"
+            onClick={() => setMenuOpen(false)}
+          >
+            Let&apos;s Talk →
+          </a>
+
+          {/* Panel footer */}
+          <div className="nav-mobile-footer">
+            dbohltech &middot; Florida, USA
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
