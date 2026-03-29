@@ -73,9 +73,9 @@ export default function Home() {
         <div className="hero-left">
           <div className="hero-tag">AI Studio · Est. 2024</div>
           <h1>
-            Build smarter.<br />
-            <span className="line2">Ship faster.</span><br />
-            <span className="accent">With AI.</span>
+            Let's build the<br />
+            <span className="line2">thing you've</span><br />
+            <span className="accent">been picturing.</span>
           </h1>
           <p className="hero-desc">
             AI tools, automations, browser extensions, apps, and the graphics that tie it all
@@ -113,7 +113,7 @@ export default function Home() {
           <div className="stats-row">
             <div className="stat">
               <span className="stat-num">10+</span>
-              <div className="stat-label">Years Dev</div>
+              <div className="stat-label">Yrs Dev + Design</div>
             </div>
             <div className="stat">
               <span className="stat-num">40+</span>
@@ -396,7 +396,7 @@ export default function Home() {
         <RevealSection delay={80}>
           <h2 className="cta-title">
             Got a project?<br />
-            <span style={{ color: 'var(--muted)' }}>Let&apos;s build it with AI.</span>
+            <span style={{ color: 'var(--muted)' }}>Let&apos;s build it together.</span>
           </h2>
         </RevealSection>
         <RevealSection delay={160}>

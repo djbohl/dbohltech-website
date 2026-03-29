@@ -97,19 +97,20 @@ export default function Nav() {
             ))}
           </nav>
 
-          {/* Gradient CTA */}
-          <a
-            href={isHome ? '#contact' : '/#contact'}
-            className="nav-mobile-cta"
-            onClick={() => setMenuOpen(false)}
-          >
-            Let&apos;s Talk →
-          </a>
-
-          {/* Panel footer */}
-          <div className="nav-mobile-footer">
-            dbohltech &middot; Florida, USA
+          {/* Bottom section — always at the bottom via margin-top: auto */}
+          <div className="nav-mobile-bottom">
+            <a
+              href={isHome ? '#contact' : '/#contact'}
+              className="nav-mobile-cta"
+              onClick={() => setMenuOpen(false)}
+            >
+              Let&apos;s Talk →
+            </a>
+            <div className="nav-mobile-footer">
+              dbohltech &middot; Florida, USA
+            </div>
           </div>
+
         </div>
       </div>
     </>

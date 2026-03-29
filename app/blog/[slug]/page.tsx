@@ -32,28 +32,44 @@ export default async function BlogPostPage({
 
   return (
     <>
+      {/* Hero header */}
       <div className="post-header">
+        <div className="post-header-glow" />
+        <div className="post-header-glow2" />
+
         <Link href="/blog" className="back-link">
           ← Back to Blog
         </Link>
+
         {post.tags.length > 0 && (
-          <div className="section-label" style={{ marginBottom: '1rem' }}>
+          <div className="section-label" style={{ marginBottom: '1.2rem' }}>
             {post.tags.join(' · ')}
           </div>
         )}
+
         <h1 className="post-header-title">{post.title}</h1>
+
         <div className="post-meta-row">
           <span className="post-meta-date">{formatDate(post.date)}</span>
+          {post.tags.length > 0 && (
+            <div className="post-meta-tags">
+              {post.tags.map((t) => (
+                <span key={t} className="tag">{t}</span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
+      {/* Article body */}
       <div className="prose-wrapper">
         <article className="prose">
           <ReactMarkdown>{post.content}</ReactMarkdown>
         </article>
 
-        <div style={{ marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--border)' }}>
-          <Link href="/blog" className="back-link">
+        {/* Bottom nav */}
+        <div className="prose-footer">
+          <Link href="/blog" className="prose-back-btn">
             ← All Posts
           </Link>
         </div>
