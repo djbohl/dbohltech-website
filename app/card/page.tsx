@@ -17,7 +17,7 @@ export default function CardPage() {
       <style>{`
         @media print {
           nav, footer { display: none !important; }
-          body { background: white !important; }
+          html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
         }
       `}</style>
 
@@ -29,6 +29,10 @@ export default function CardPage() {
           <div className={styles.top}>
             <div className={styles.name}>DBOHLTECH</div>
             <div className={styles.title}>Donna Bohl</div>
+          </div>
+
+          <div className={styles.logo}>
+            <img src="/site/logo.png" alt="dbohltech logo" />
           </div>
 
           <div className={styles.bottom}>

@@ -127,6 +127,48 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WORK — Featured Projects */}
+      <section id="work" className="work-section">
+        <RevealSection><div className="section-label">Selected Work</div></RevealSection>
+        <RevealSection delay={80}>
+          <h2 className="section-title">Things I&apos;ve shipped.</h2>
+        </RevealSection>
+        <RevealSection delay={160}>
+          <p className="section-sub">A few recent projects — scroll to explore.</p>
+        </RevealSection>
+
+        <RevealSection delay={240}>
+          <div className="featured-projects-scroll">
+            {featuredProjects.map((project) => (
+              <Link key={project.slug} href={`/projects/${project.slug}`} className="featured-project-card project-card">
+                <div className={`project-thumb thumb-${project.thumbVariant}`}>
+                  <div className="project-thumb-text">{project.thumbText}</div>
+                  <div className="project-thumb-icon">{project.thumbEmoji}</div>
+                </div>
+                <div className="project-info">
+                  <div className="project-type">{project.type}</div>
+                  <div className="project-name">{project.title}</div>
+                  <p className="project-blurb">{project.blurb}</p>
+                  <div className="service-tags" style={{ marginBottom: '1.5rem' }}>
+                    {project.tags.map((t) => (
+                      <span key={t} className="tag">{t}</span>
+                    ))}
+                  </div>
+                  <span className="project-link">View Project →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </RevealSection>
+
+        {/* View All Work Link */}
+        <div style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <Link href="/work" className="btn-ghost">
+            View All Work →
+          </Link>
+        </div>
+      </section>
+
       {/* TICKER */}
       <Ticker />
 
@@ -308,48 +350,6 @@ export default function Home() {
 
           </div>
         </RevealSection>
-      </section>
-
-      {/* WORK */}
-      <section id="work" className="work-section">
-        <RevealSection><div className="section-label">Selected Work</div></RevealSection>
-        <RevealSection delay={80}>
-          <h2 className="section-title">Things I&apos;ve shipped.</h2>
-        </RevealSection>
-        <RevealSection delay={160}>
-          <p className="section-sub">A few recent projects — scroll to explore.</p>
-        </RevealSection>
-
-        <RevealSection delay={240}>
-          <div className="featured-projects-scroll">
-            {featuredProjects.map((project) => (
-              <Link key={project.slug} href={`/projects/${project.slug}`} className="featured-project-card project-card">
-                <div className={`project-thumb thumb-${project.thumbVariant}`}>
-                  <div className="project-thumb-text">{project.thumbText}</div>
-                  <div className="project-thumb-icon">{project.thumbEmoji}</div>
-                </div>
-                <div className="project-info">
-                  <div className="project-type">{project.type}</div>
-                  <div className="project-name">{project.title}</div>
-                  <p className="project-blurb">{project.blurb}</p>
-                  <div className="service-tags" style={{ marginBottom: '1.5rem' }}>
-                    {project.tags.map((t) => (
-                      <span key={t} className="tag">{t}</span>
-                    ))}
-                  </div>
-                  <span className="project-link">View Project →</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </RevealSection>
-
-        {/* View All Work Link */}
-        <div style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-          <Link href="/work" className="btn-ghost">
-            View All Work →
-          </Link>
-        </div>
       </section>
 
       {/* ABOUT */}
