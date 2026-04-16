@@ -10,7 +10,7 @@ export default function Footer() {
           GitHub
         </a>
       </div>
-      <span>Florida, USA</span>
+      <span>Pittsburgh, USA</span>
     </footer>
   )
 }

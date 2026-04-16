@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import Ticker from '@/components/Ticker'
 import RevealSection from '@/components/RevealSection'
 import SkillBars from '@/components/SkillBars'
@@ -71,7 +72,7 @@ export default function Home() {
         <div className="hero-glow2" />
 
         <div className="hero-left">
-          <div className="hero-tag">AI Studio · Est. 2024</div>
+          <div className="hero-tag">Full-Stack Development · Systems Design</div>
           <h1>
             Let's build the<br />
             <span className="line2">thing you've</span><br />
@@ -113,11 +114,11 @@ export default function Home() {
           <div className="stats-row">
             <div className="stat">
               <span className="stat-num">10+</span>
-              <div className="stat-label">Yrs Dev + Design</div>
+              <div className="stat-label">Years Design</div>
             </div>
             <div className="stat">
-              <span className="stat-num">40+</span>
-              <div className="stat-label">Projects</div>
+              <span className="stat-num">5+</span>
+              <div className="stat-label">Years Dev</div>
             </div>
             <div className="stat">
               <span className="stat-num">1</span>
@@ -324,8 +325,19 @@ export default function Home() {
             <RevealSection delay={240}>
               <Link href={`/projects/${featuredProject.slug}`} className="project-card featured">
                 <div className={`project-thumb thumb-${featuredProject.thumbVariant}`}>
-                  <div className="project-thumb-text">{featuredProject.thumbText}</div>
-                  <div className="project-thumb-icon">{featuredProject.thumbEmoji}</div>
+                  {featuredProject.thumbImage ? (
+                    <Image
+                      src={featuredProject.thumbImage}
+                      alt={featuredProject.title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className="project-thumb-text">{featuredProject.thumbText}</div>
+                      <div className="project-thumb-icon">{featuredProject.thumbEmoji}</div>
+                    </>
+                  )}
                 </div>
                 <div className="project-info">
                   <div className="project-type">{featuredProject.type}</div>
@@ -346,8 +358,19 @@ export default function Home() {
             <RevealSection key={project.slug} delay={320 + i * 80}>
               <Link href={`/projects/${project.slug}`} className="project-card">
                 <div className={`project-thumb thumb-${project.thumbVariant}`}>
-                  <div className="project-thumb-text">{project.thumbText}</div>
-                  <div className="project-thumb-icon">{project.thumbEmoji}</div>
+                  {project.thumbImage ? (
+                    <Image
+                      src={project.thumbImage}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <>
+                      <div className="project-thumb-text">{project.thumbText}</div>
+                      <div className="project-thumb-icon">{project.thumbEmoji}</div>
+                    </>
+                  )}
                 </div>
                 <div className="project-info">
                   <div className="project-type">{project.type}</div>
@@ -366,25 +389,54 @@ export default function Home() {
         <div className="about-inner">
           <RevealSection className="about-left">
             <div className="section-label">The Person Behind It</div>
-            <h2>Not an agency.<br />Better.</h2>
+            <h2>Full-stack builder.<br />Systems thinking.</h2>
             <p>
-              I&apos;m Donna — a developer, designer, and AI builder who builds the whole thing.
-              AI tools, automations, apps, extensions, Claude skills, and brand graphics — all of
-              it, all me.
+              I&apos;m a full-stack developer and systems technologist specializing in building scalable,
+              efficient solutions that bridge web, cloud, and infrastructure domains.
             </p>
             <p>
-              I&apos;ve spent years building for clients across industries. Right now I&apos;m
-              deeply focused on AI — creating tools, agents, and workflows that make real things
-              faster, smarter, and better.
+              I design and implement software and automation tools that reduce operational bottlenecks,
+              enhance data accessibility, and improve productivity — delivering measurable outcomes.
+              My experience spans end-to-end project ownership: developing custom CRMs, deploying
+              automation scripts, administering secure cloud infrastructure, and building tools that
+              improve operational efficiency by 75% or more.
             </p>
-            <div className="about-highlight">
-              &ldquo;You talk to me at kickoff, you talk to me at launch. No account managers, no
-              mystery — just clean code, smart AI, and honest timelines.&rdquo;
-            </div>
+            <p>
+              I thrive in independent, high-impact environments, rapidly learning new technologies to
+              solve complex challenges. I&apos;m motivated by creating systems that work reliably at scale.
+            </p>
           </RevealSection>
 
           <RevealSection delay={160}>
             <SkillBars />
+          </RevealSection>
+        </div>
+
+        <div style={{ marginTop: '3rem', paddingTop: '3rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+          <RevealSection>
+            <div className="section-label">Certifications</div>
+          </RevealSection>
+          <RevealSection delay={80}>
+            <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <div style={{
+                padding: '1.25rem 1.5rem',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '0.5rem',
+                background: 'rgba(255,255,255,0.03)'
+              }}>
+                <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>Make Foundation</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--muted)' }}>June 2025</div>
+              </div>
+              <div style={{
+                padding: '1.25rem 1.5rem',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '0.5rem',
+                background: 'rgba(255,255,255,0.03)'
+              }}>
+                <div style={{ fontWeight: '600', marginBottom: '0.25rem' }}>3CX Basic Certified Engineer V18</div>
+                <div style={{ fontSize: '0.875rem', color: 'var(--muted)' }}>Active</div>
+              </div>
+            </div>
           </RevealSection>
         </div>
       </section>

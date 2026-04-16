@@ -107,7 +107,7 @@ export default function Nav() {
               Let&apos;s Talk →
             </a>
             <div className="nav-mobile-footer">
-              dbohltech &middot; Florida, USA
+              dbohltech &middot; Pittsburgh, USA
             </div>
           </div>
 
