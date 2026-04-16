@@ -14,16 +14,16 @@
 .card {
   width: 3.5in;
   height: 2in;
-  background: #0d0d0d;
-  border: 1px solid #1e1e1e;
+  background: #070b11;
+  border: 1px solid rgba(59, 130, 246, 0.18);
   border-radius: 6px;
   position: relative;
   overflow: hidden;
-  padding: 28px 32px;
+  padding: 20px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 0 0 1px #111, 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.12), 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.04);
   transform-style: preserve-3d;
   transition: transform 0.4s ease;
   cursor: pointer;
@@ -31,15 +31,15 @@
 
 .card:hover {
   transform: rotateY(-4deg) rotateX(2deg) translateY(-4px);
-  box-shadow: 0 0 0 1px #222, 0 40px 80px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.25), 0 40px 80px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .card::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #00e5ff 0%, #0099ff 60%, transparent 100%);
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 60%, transparent 100%);
 }
 
 .card::after {
@@ -57,7 +57,7 @@
   position: absolute;
   width: 200px; height: 200px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 70%);
   top: -60px; right: -40px;
   pointer-events: none;
 }
@@ -66,36 +66,43 @@
 
 .logo {
   position: absolute;
-  top: 14px;
-  right: 16px;
-  width: 60px;
-  height: 60px;
+  top: 10px;
+  right: 12px;
+  width: 50px;
+  height: 50px;
   z-index: 2;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.10);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  opacity: 0.85;
+  object-fit: cover;
+  opacity: 0.9;
+  border-radius: 50%;
 }
 
 .name {
   font-family: var(--font-bebas), sans-serif;
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #e2e8f0;
   line-height: 1;
-  text-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.10);
 }
 
 .title {
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 300;
   letter-spacing: 0.25em;
-  color: #00e5ff;
+  color: #06b6d4;
   text-transform: uppercase;
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
 .bottom {
@@ -108,30 +115,30 @@
 .contacts { display: flex; flex-direction: column; gap: 3px; }
 
 .contactItem {
-  font-size: 0.52rem;
+  font-size: 0.48rem;
   font-weight: 300;
-  color: #666;
+  color: #64748b;
   letter-spacing: 0.05em;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   transition: color 0.2s;
 }
 
-.card:hover .contactItem { color: #888; }
+.card:hover .contactItem { color: #94a3b8; }
 
 .dot {
-  width: 3px; height: 3px;
+  width: 2.5px; height: 2.5px;
   border-radius: 50%;
-  background: #00e5ff;
-  opacity: 0.5;
+  background: #3b82f6;
+  opacity: 0.6;
   flex-shrink: 0;
 }
 
-.github { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
-.githubLabel { font-size: 0.42rem; letter-spacing: 0.2em; color: #333; text-transform: uppercase; }
-.githubHandle { font-size: 0.58rem; color: #555; letter-spacing: 0.05em; font-weight: 400; }
-.github svg { width: 16px; height: 16px; fill: #444; display: block; margin-left: auto; margin-bottom: 2px; }
+.github { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.githubLabel { font-size: 0.38rem; letter-spacing: 0.2em; color: #475569; text-transform: uppercase; }
+.githubHandle { font-size: 0.52rem; color: #64748b; letter-spacing: 0.05em; font-weight: 400; }
+.github svg { width: 14px; height: 14px; fill: #64748b; display: block; margin-left: auto; margin-bottom: 1px; }
 
 /* ── DIVIDER ───────────────────────────────────────── */
 .divider {
@@ -140,8 +147,8 @@
   gap: 16px;
   width: 3.5in;
 }
-.dividerLine { flex: 1; height: 1px; background: #1e1e1e; }
-.dividerText { font-size: 0.45rem; letter-spacing: 0.25em; color: #2a2a2a; text-transform: uppercase; }
+.dividerLine { flex: 1; height: 1px; background: rgba(59, 130, 246, 0.12); }
+.dividerText { font-size: 0.42rem; letter-spacing: 0.25em; color: #475569; text-transform: uppercase; }
 
 /* ── QR SHARE PANEL ────────────────────────────────── */
 .sharePanel {
@@ -152,15 +159,15 @@
 }
 
 .shareLabel {
-  font-size: 0.45rem;
+  font-size: 0.42rem;
   letter-spacing: 0.3em;
-  color: #2a2a2a;
+  color: #475569;
   text-transform: uppercase;
 }
 
 .qrBracket {
   position: relative;
-  padding: 14px;
+  padding: 12px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -168,8 +175,8 @@
 
 .bracketCorner {
   position: absolute;
-  width: 20px; height: 20px;
-  border-color: #00e5ff;
+  width: 16px; height: 16px;
+  border-color: #3b82f6;
   border-style: solid;
   opacity: 0.65;
   transition: opacity 0.3s;
@@ -183,10 +190,10 @@
 .bracketCorner.br { bottom: 0; right: 0; border-width: 0 2px 2px 0; }
 
 .qrUrl {
-  font-size: 0.46rem;
+  font-size: 0.42rem;
   letter-spacing: 0.18em;
-  color: #00e5ff;
-  opacity: 0.45;
+  color: #06b6d4;
+  opacity: 0.55;
   text-align: center;
 }
 
@@ -196,9 +203,9 @@
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #444;
+  color: #64748b;
   background: transparent;
-  border: 1px solid #1e1e1e;
+  border: 1px solid rgba(59, 130, 246, 0.18);
   border-radius: 4px;
   padding: 10px 20px;
   cursor: pointer;
@@ -206,8 +213,8 @@
 }
 
 .printBtn:hover {
-  color: #00e5ff;
-  border-color: #00e5ff;
+  color: #3b82f6;
+  border-color: #3b82f6;
 }
 
 /* ── MOBILE ────────────────────────────────────────── */
@@ -217,60 +224,24 @@
   .card {
     width: calc(100vw - 32px);
     height: auto;
-    min-height: 170px;
-    padding: 20px 22px;
+    min-height: 160px;
+    padding: 16px 18px;
   }
 
-  .name { font-size: 2rem; }
+  .logo {
+    width: 40px;
+    height: 40px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .logo img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .name { font-size: 1.8rem; }
 
   .divider { width: calc(100vw - 32px); }
 }
 
-/* ── PRINT ─────────────────────────────────────────── */
-@media print {
-  /* Hide everything except the card */
-  .printBtn { display: none !important; }
-  .divider { display: none !important; }
-  .sharePanel { display: none !important; }
-
-  .page {
-    margin: 0 !important;
-    padding: 0 !important;
-    background: white !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    min-height: auto !important;
-    gap: 0 !important;
-  }
-
-  .cardWrap {
-    width: 100% !important;
-    height: auto !important;
-    display: flex !important;
-    justify-content: center !important;
-  }
-
-  .card {
-    box-shadow: none;
-    border: 1px solid #ddd;
-    margin: 0 !important;
-    page-break-inside: avoid;
-  }
-
-  .card::before {
-    background: linear-gradient(90deg, #0099cc 0%, #006699 60%, transparent 100%);
-  }
-
-  .card::after { display: none; }
-  .glow { display: none; }
-
-  .logo img { opacity: 1; }
-
-  .name { color: #000; text-shadow: none; }
-  .title { color: #0099cc; }
-  .contactItem { color: #555; }
-  .github svg { fill: #777; }
-  .githubHandle { color: #777; }
-  .githubLabel { color: #aaa; }
-}

@@ -36,6 +36,25 @@ Tech stack: Next.js (web frontend), React Native (mobile), Node.js (backend API)
     thumbImage: '/projects/lynxonboard-app.PNG',
   },
   {
+    slug: 'aquifer-monitor',
+    title: 'Aquifer Crisis Monitor',
+    type: 'Data Visualization · Dashboard',
+    featured: true,
+    blurb: 'Interactive map-based dashboard monitoring aquifer stress in major data-center regions with live USGS groundwater readings and depletion modeling.',
+    description: `Aquifer Crisis Monitor is an interactive dashboard that visualizes groundwater stress across major data-center regions. The application combines geospatial data, live USGS monitoring data, and predictive depletion modeling.
+
+Features include region-based filtering, interactive maps with depletion/recharge zones, existing and planned data centers, dynamic modeling with scenario toggles (Current/AI Surge/Managed growth), and live groundwater level readings plotted from USGS monitoring wells. The backend uses an Express proxy to securely fetch USGS API data and avoid browser CORS restrictions.
+
+Built with React and Vite for a responsive frontend, MapLibre GL JS for interactive mapping, and Node.js/Express for the backend proxy. The application supports machine-generated data ingestion and enables users to export model state reports.`,
+    tags: ['React', 'Vite', 'MapLibre GL JS', 'Express', 'USGS API', 'Data Visualization'],
+    thumbVariant: 'blue',
+    thumbEmoji: '💧',
+    thumbText: 'DATA',
+    year: 2025,
+    liveUrl: 'https://aquifer-monitor.vercel.app',
+    githubUrl: 'https://github.com/djbohl/aquifer-monitor',
+  },
+  {
     slug: 'data-automation',
     title: 'Data Automation & Kubernetes Infrastructure',
     type: 'Backend · Data Engineering',
@@ -73,7 +92,7 @@ The site highlights the book's key value propositions, author information, and p
     slug: 'central-florida-packaging',
     title: 'Central Florida Packaging B2B Website & Logo Redesign',
     type: 'Web Design · Branding',
-    featured: true,
+    featured: false,
     blurb: 'B2B website redesign and logo refresh for aerospace/defense packaging company with Wix Velo customization, SEO optimization, and business integration.',
     description: `Developed and optimized a comprehensive B2B website for Central Florida Packaging, a custom packaging solutions provider serving aerospace, military defense, medical, industrial, automotive, and commercial sectors.
 

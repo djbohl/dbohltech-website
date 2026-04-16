@@ -2,6 +2,8 @@
 
 import { Bebas_Neue } from 'next/font/google'
 import QRCode from 'react-qr-code'
+import html2canvas from 'html2canvas'
+import { useRef } from 'react'
 import styles from './card.module.css'
 
 const bebas = Bebas_Neue({
@@ -12,17 +14,32 @@ const bebas = Bebas_Neue({
 })
 
 export default function CardPage() {
+  const cardRef = useRef<HTMLDivElement>(null)
+
+  const downloadCardPNG = async () => {
+    if (!cardRef.current) return
+
+    try {
+      const canvas = await html2canvas(cardRef.current, {
+        scale: 3, // High DPI for quality
+        useCORS: true,
+        allowTaint: true,
+        backgroundColor: null,
+      })
+
+      const link = document.createElement('a')
+      link.href = canvas.toDataURL('image/png')
+      link.download = 'dbohltech-business-card.png'
+      link.click()
+    } catch (err) {
+      console.error('Failed to download card:', err)
+    }
+  }
+
   return (
     <main className={`${styles.page} ${bebas.variable}`}>
-      <style>{`
-        @media print {
-          nav, footer { display: none !important; }
-          html, body { background: white !important; margin: 0 !important; padding: 0 !important; }
-        }
-      `}</style>
-
       {/* ── Business Card ─── */}
-      <div className={styles.cardWrap}>
+      <div className={styles.cardWrap} ref={cardRef}>
         <div className={styles.card}>
           <div className={styles.glow} />
 
@@ -87,9 +104,9 @@ export default function CardPage() {
         <div className={styles.qrUrl}>card.dbohl.tech</div>
       </div>
 
-      {/* ── Print Button ─── */}
-      <button className={styles.printBtn} onClick={() => window.print()}>
-        Print / Save as PDF
+      {/* ── Download Button ─── */}
+      <button className={styles.printBtn} onClick={downloadCardPNG}>
+        Download as PNG
       </button>
 
     </main>
