@@ -733,6 +733,32 @@ section { padding: 6rem 3rem; }
   grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
 }
+
+/* Horizontal scroll carousel for featured projects */
+.featured-projects-scroll {
+  display: flex;
+  gap: 1.2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  margin: 2rem 0;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.featured-projects-scroll::-webkit-scrollbar {
+  display: none;
+}
+.featured-project-card {
+  flex: 0 0 min(calc(100% - 2rem), 500px);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+@media (max-width: 768px) {
+  .featured-project-card {
+    flex: 0 0 min(calc(100% - 1rem), 350px);
+  }
+}
 .project-card {
   background: rgba(13, 20, 33, 0.80);
   backdrop-filter: blur(24px) saturate(1.2);

@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import RevealSection from '@/components/RevealSection'
 import { projects } from '@/data/projects'
 
@@ -29,19 +28,8 @@ export default function WorkPage() {
             <RevealSection key={project.slug} delay={i * 60}>
               <Link href={`/projects/${project.slug}`} className={`project-card ${project.featured ? 'featured' : ''}`}>
                 <div className={`project-thumb thumb-${project.thumbVariant}`}>
-                  {project.thumbImage ? (
-                    <Image
-                      src={project.thumbImage}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <>
-                      <div className="project-thumb-text">{project.thumbText}</div>
-                      <div className="project-thumb-icon">{project.thumbEmoji}</div>
-                    </>
-                  )}
+                  <div className="project-thumb-text">{project.thumbText}</div>
+                  <div className="project-thumb-icon">{project.thumbEmoji}</div>
                 </div>
                 <div className="project-info">
                   <div className="project-type">{project.type}</div>
