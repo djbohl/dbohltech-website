@@ -27,7 +27,7 @@ export default function Nav() {
 
   const navLinks = [
     { label: 'Services', href: isHome ? '#services' : '/#services' },
-    { label: 'Work',     href: isHome ? '#work'     : '/#work'     },
+    { label: 'Work',     href: '/work'                              },
     { label: 'About',    href: isHome ? '#about'    : '/#about'    },
     { label: 'Blog',     href: '/blog'                              },
   ]

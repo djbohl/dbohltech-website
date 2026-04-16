@@ -39,7 +39,7 @@ Tech stack: Next.js (web frontend), React Native (mobile), Node.js (backend API)
     slug: 'data-automation',
     title: 'Data Automation & Kubernetes Infrastructure',
     type: 'Backend · Data Engineering',
-    featured: false,
+    featured: true,
     blurb: 'Python-based data automation pipeline with Kubernetes orchestration, device asset management, and distributed backup systems.',
     description: `Built a comprehensive data automation solution for device asset management using Python, Pandas, and Jupyter Notebooks.
 
@@ -73,7 +73,7 @@ The site highlights the book's key value propositions, author information, and p
     slug: 'central-florida-packaging',
     title: 'Central Florida Packaging B2B Website & Logo Redesign',
     type: 'Web Design · Branding',
-    featured: false,
+    featured: true,
     blurb: 'B2B website redesign and logo refresh for aerospace/defense packaging company with Wix Velo customization, SEO optimization, and business integration.',
     description: `Developed and optimized a comprehensive B2B website for Central Florida Packaging, a custom packaging solutions provider serving aerospace, military defense, medical, industrial, automotive, and commercial sectors.
 

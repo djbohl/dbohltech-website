@@ -22,7 +22,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: 'dbohltech',
   description:
-    'AI tools, agents, automations, browser extensions, apps, and design — built by one developer who cares how it turns out.',
+    'Backend development, data engineering, cloud infrastructure, and AI integrations — built by one engineer who cares about scale, reliability, and clean architecture.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

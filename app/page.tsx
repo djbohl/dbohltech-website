@@ -60,8 +60,7 @@ const IconCode = () => (
 )
 
 export default function Home() {
-  const featuredProject = projects.find((p) => p.featured)
-  const otherProjects = projects.filter((p) => !p.featured)
+  const featuredProjects = projects.filter((p) => p.featured)
 
   return (
     <>
@@ -72,18 +71,18 @@ export default function Home() {
         <div className="hero-glow2" />
 
         <div className="hero-left">
-          <div className="hero-tag">Full-Stack Development · Systems Design</div>
+          <div className="hero-tag">Backend · Data · Infrastructure · AI</div>
           <h1>
             Let's build the<br />
             <span className="line2">thing you've</span><br />
             <span className="accent">been picturing.</span>
           </h1>
           <p className="hero-desc">
-            AI tools, automations, browser extensions, apps, and the graphics that tie it all
-            together — built by one person who actually cares how it turns out.
+            Backend systems, data pipelines, cloud infrastructure, and AI integrations —
+            built by one engineer who cares about reliability, scale, and clean architecture.
           </p>
           <div className="hero-actions">
-            <a href="#work" className="btn-primary">See the Work</a>
+            <Link href="/work" className="btn-primary">See the Work</Link>
             <a href="#contact" className="btn-ghost">Start a Project</a>
           </div>
         </div>
@@ -99,12 +98,13 @@ export default function Home() {
             <div className="terminal-body">
               <div><span className="t-dim">$ </span><span className="t-accent">cat</span> what-i-build.txt</div>
               <div className="t-dim">———————————————————</div>
-              <div><span className="t-purple">✦</span> AI Tools &amp; Agents</div>
-              <div><span className="t-purple">✦</span> Automations &amp; Workflows</div>
-              <div><span className="t-purple">✦</span> Browser Extensions</div>
-              <div><span className="t-purple">✦</span> Graphic &amp; Brand Design</div>
-              <div><span className="t-purple">✦</span> Web &amp; Mobile Apps</div>
-              <div><span className="t-purple">✦</span> AI Skills &amp; Claude Plugins</div>
+              <div><span className="t-purple">▸</span> REST &amp; GraphQL APIs</div>
+              <div><span className="t-purple">▸</span> Data Pipelines &amp; ETL</div>
+              <div><span className="t-purple">▸</span> Cloud Infrastructure</div>
+              <div><span className="t-purple">▸</span> AI Integrations</div>
+              <div><span className="t-purple">▸</span> Automation Scripts</div>
+              <div><span className="t-purple">▸</span> Full-Stack Applications</div>
+              <div><span className="t-purple">▸</span> Dashboards &amp; Visualization</div>
               <div className="t-dim">———————————————————</div>
               <div><span className="t-dim">$ </span><span className="t-green">status</span>: open for projects</div>
               <div><span className="t-dim">$ </span><span className="blink" /></div>
@@ -135,11 +135,11 @@ export default function Home() {
       <section id="services">
         <RevealSection><div className="section-label">What I Build</div></RevealSection>
         <RevealSection delay={80}>
-          <h2 className="section-title">AI-first, end-to-end,<br />whatever the platform.</h2>
+          <h2 className="section-title">Reliable systems.<br />Clean architecture.</h2>
         </RevealSection>
         <RevealSection delay={160}>
           <p className="section-sub">
-            From AI agents to full-stack apps — if it runs on a screen or in the cloud, I can build it smarter.
+            From backend APIs to cloud infrastructure — engineered for scale, performance, and clarity.
           </p>
         </RevealSection>
         <RevealSection delay={240}>
@@ -150,24 +150,24 @@ export default function Home() {
               <div
                 className="service-icon-bubble"
                 style={{
-                  background: 'linear-gradient(135deg, #7c3aed, #a855f7)',
+                  background: 'linear-gradient(135deg, #1d4ed8, #3b82f6)',
                   // @ts-ignore
-                  '--bubble-glow': 'rgba(124,58,237,0.32)',
+                  '--bubble-glow': 'rgba(37,99,235,0.35)',
                 }}
               >
-                <IconBrain />
+                <IconCode />
               </div>
               <div className="service-num">01</div>
-              <div className="service-name">AI Tools &amp; Agents</div>
+              <div className="service-name">Backend &amp; API Development</div>
               <p className="service-desc">
-                Custom AI-powered tools, chatbots, and autonomous agents that actually solve real
-                problems. Built with the latest models and designed to fit your workflow.
+                RESTful and GraphQL APIs, microservices, and server-side systems built for
+                reliability and performance. Designed with clean contracts and built to scale.
               </p>
               <div className="service-tags">
-                <span className="tag">Claude API</span>
-                <span className="tag">OpenAI</span>
-                <span className="tag">LangChain</span>
-                <span className="tag">RAG</span>
+                <span className="tag">Node.js</span>
+                <span className="tag">Python</span>
+                <span className="tag">REST</span>
+                <span className="tag">GraphQL</span>
               </div>
             </div>
 
@@ -176,24 +176,24 @@ export default function Home() {
               <div
                 className="service-icon-bubble"
                 style={{
-                  background: 'linear-gradient(135deg, #f59e0b, #f97316)',
+                  background: 'linear-gradient(135deg, #0e7490, #06b6d4)',
                   // @ts-ignore
-                  '--bubble-glow': 'rgba(249,115,22,0.32)',
+                  '--bubble-glow': 'rgba(6,182,212,0.35)',
                 }}
               >
                 <IconBolt />
               </div>
               <div className="service-num">02</div>
-              <div className="service-name">Automations &amp; Workflows</div>
+              <div className="service-name">Data Engineering &amp; Analytics</div>
               <p className="service-desc">
-                End-to-end automation pipelines that cut out the repetitive work. From no-code
-                flows to custom scripts — your processes, on autopilot.
+                ETL pipelines, data modeling, and analytics platforms. Turning raw data into
+                reliable, queryable systems that support real decisions.
               </p>
               <div className="service-tags">
-                <span className="tag">Make</span>
-                <span className="tag">n8n</span>
-                <span className="tag">Zapier</span>
-                <span className="tag">Custom APIs</span>
+                <span className="tag">Python</span>
+                <span className="tag">Pandas</span>
+                <span className="tag">PostgreSQL</span>
+                <span className="tag">Jupyter</span>
               </div>
             </div>
 
@@ -202,23 +202,24 @@ export default function Home() {
               <div
                 className="service-icon-bubble"
                 style={{
-                  background: 'linear-gradient(135deg, #0891b2, #06b6d4)',
+                  background: 'linear-gradient(135deg, #b45309, #f59e0b)',
                   // @ts-ignore
-                  '--bubble-glow': 'rgba(6,182,212,0.32)',
+                  '--bubble-glow': 'rgba(245,158,11,0.32)',
                 }}
               >
                 <IconPuzzle />
               </div>
               <div className="service-num">03</div>
-              <div className="service-name">AI Skills &amp; Claude Plugins</div>
+              <div className="service-name">Cloud &amp; Infrastructure</div>
               <p className="service-desc">
-                Building and publishing Claude skills, Cowork plugins, and MCP servers that
-                extend what AI can do inside your team&apos;s daily tools.
+                Cloud deployments, container orchestration, and infrastructure automation.
+                Kubernetes, CI/CD, and cloud-native architecture on AWS and GCP.
               </p>
               <div className="service-tags">
-                <span className="tag">Claude Skills</span>
-                <span className="tag">MCP</span>
-                <span className="tag">Cowork Plugins</span>
+                <span className="tag">Kubernetes</span>
+                <span className="tag">Docker</span>
+                <span className="tag">AWS</span>
+                <span className="tag">CI/CD</span>
               </div>
             </div>
 
@@ -227,82 +228,82 @@ export default function Home() {
               <div
                 className="service-icon-bubble"
                 style={{
-                  background: 'linear-gradient(135deg, #db2777, #ec4899)',
+                  background: 'linear-gradient(135deg, #1d4ed8, #2563eb)',
                   // @ts-ignore
-                  '--bubble-glow': 'rgba(236,72,153,0.32)',
-                }}
-              >
-                <IconWand />
-              </div>
-              <div className="service-num">04</div>
-              <div className="service-name">Graphic &amp; Brand Design</div>
-              <p className="service-desc">
-                Visual identity, UI/UX design, digital assets, and graphics — designed with
-                intention and built to scale. Design and dev under one roof.
-              </p>
-              <div className="service-tags">
-                <span className="tag">UI/UX</span>
-                <span className="tag">Brand</span>
-                <span className="tag">Figma</span>
-                <span className="tag">Motion</span>
-              </div>
-            </div>
-
-            <div className="service-card">
-              <div className="service-card-shine" />
-              <div
-                className="service-icon-bubble"
-                style={{
-                  background: 'linear-gradient(135deg, #2563eb, #3b82f6)',
-                  // @ts-ignore
-                  '--bubble-glow': 'rgba(59,130,246,0.32)',
+                  '--bubble-glow': 'rgba(37,99,235,0.32)',
                 }}
               >
                 <IconExtension />
               </div>
-              <div className="service-num">05</div>
-              <div className="service-name">Browser Extensions</div>
+              <div className="service-num">04</div>
+              <div className="service-name">Full-Stack Applications</div>
               <p className="service-desc">
-                Powerful browser extensions that supercharge how you use the web. AI-enhanced,
-                cross-browser, and built with real performance in mind.
+                End-to-end web applications: React/Next.js frontends, Node.js or Python
+                backends, and production-grade database design. One owner, full stack.
               </p>
               <div className="service-tags">
-                <span className="tag">Chrome</span>
-                <span className="tag">Firefox</span>
-                <span className="tag">Edge</span>
-                <span className="tag">AI-enhanced</span>
+                <span className="tag">Next.js</span>
+                <span className="tag">React</span>
+                <span className="tag">Node.js</span>
+                <span className="tag">TypeScript</span>
+              </div>
+            </div>
+
+            <div className="service-card">
+              <div className="service-card-shine" />
+              <div
+                className="service-icon-bubble"
+                style={{
+                  background: 'linear-gradient(135deg, #0e7490, #06b6d4)',
+                  // @ts-ignore
+                  '--bubble-glow': 'rgba(6,182,212,0.32)',
+                }}
+              >
+                <IconBrain />
+              </div>
+              <div className="service-num">05</div>
+              <div className="service-name">AI Integrations</div>
+              <p className="service-desc">
+                Integrating LLMs, embedding models, and AI APIs into production systems.
+                Practical AI that solves real operational problems, not demos.
+              </p>
+              <div className="service-tags">
+                <span className="tag">Claude API</span>
+                <span className="tag">OpenAI</span>
+                <span className="tag">RAG</span>
+                <span className="tag">LangChain</span>
               </div>
             </div>
 
             <div
               className="service-card"
               style={{
-                background: 'linear-gradient(135deg, rgba(168,85,247,0.06), rgba(236,72,153,0.04))',
-                borderColor: 'rgba(168,85,247,0.18)',
+                background: 'rgba(13, 20, 33, 0.95)',
+                borderColor: 'rgba(59, 130, 246, 0.15)',
               }}
             >
               <div className="service-card-shine" />
               <div
                 className="service-icon-bubble"
                 style={{
-                  background: 'linear-gradient(135deg, #4f46e5, #7c3aed)',
+                  background: 'linear-gradient(135deg, #065f46, #10b981)',
                   // @ts-ignore
-                  '--bubble-glow': 'rgba(79,70,229,0.32)',
+                  '--bubble-glow': 'rgba(16,185,129,0.32)',
                 }}
               >
-                <IconCode />
+                <IconWand />
               </div>
               <div className="service-num" style={{ opacity: 0.5 }}>06</div>
-              <div className="service-name">Web &amp; Mobile Apps</div>
+              <div className="service-name">Automation &amp; Workflows</div>
               <p className="service-desc">
-                Full-stack web and mobile applications built to perform. React, Next.js, React
-                Native — all the way from idea to deployment.
+                Scripted automation, cron pipelines, and workflow tooling that eliminate
+                repetitive work. Python-first, production-ready, built for ops efficiency.
               </p>
               <div className="service-tags">
-                <span className="tag">Next.js</span>
-                <span className="tag">React Native</span>
-                <span className="tag">Node.js</span>
-                <span className="tag">Databases</span>
+                <span className="tag">Python</span>
+                <span className="tag">Bash</span>
+                <span className="tag">Make</span>
+                <span className="tag">n8n</span>
               </div>
             </div>
 
@@ -321,42 +322,9 @@ export default function Home() {
         </RevealSection>
 
         <div className="projects-grid">
-          {featuredProject && (
-            <RevealSection delay={240}>
-              <Link href={`/projects/${featuredProject.slug}`} className="project-card featured">
-                <div className={`project-thumb thumb-${featuredProject.thumbVariant}`}>
-                  {featuredProject.thumbImage ? (
-                    <Image
-                      src={featuredProject.thumbImage}
-                      alt={featuredProject.title}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <>
-                      <div className="project-thumb-text">{featuredProject.thumbText}</div>
-                      <div className="project-thumb-icon">{featuredProject.thumbEmoji}</div>
-                    </>
-                  )}
-                </div>
-                <div className="project-info">
-                  <div className="project-type">{featuredProject.type}</div>
-                  <div className="project-name">{featuredProject.title}</div>
-                  <p className="project-blurb">{featuredProject.blurb}</p>
-                  <div className="service-tags" style={{ marginBottom: '1.5rem' }}>
-                    {featuredProject.tags.map((t) => (
-                      <span key={t} className="tag">{t}</span>
-                    ))}
-                  </div>
-                  <span className="project-link">View Project →</span>
-                </div>
-              </Link>
-            </RevealSection>
-          )}
-
-          {otherProjects.map((project, i) => (
-            <RevealSection key={project.slug} delay={320 + i * 80}>
-              <Link href={`/projects/${project.slug}`} className="project-card">
+          {featuredProjects.map((project, i) => (
+            <RevealSection key={project.slug} delay={240 + i * 80}>
+              <Link href={`/projects/${project.slug}`} className={`project-card ${i === 0 ? 'featured' : ''}`}>
                 <div className={`project-thumb thumb-${project.thumbVariant}`}>
                   {project.thumbImage ? (
                     <Image
@@ -376,11 +344,25 @@ export default function Home() {
                   <div className="project-type">{project.type}</div>
                   <div className="project-name">{project.title}</div>
                   <p className="project-blurb">{project.blurb}</p>
+                  {i === 0 && (
+                    <div className="service-tags" style={{ marginBottom: '1.5rem' }}>
+                      {project.tags.map((t) => (
+                        <span key={t} className="tag">{t}</span>
+                      ))}
+                    </div>
+                  )}
                   <span className="project-link">View Project →</span>
                 </div>
               </Link>
             </RevealSection>
           ))}
+        </div>
+
+        {/* View All Work Link */}
+        <div style={{ textAlign: 'center', marginTop: '3rem', paddingTop: '2rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+          <Link href="/work" className="btn-ghost">
+            View All Work →
+          </Link>
         </div>
       </section>
 
@@ -453,8 +435,8 @@ export default function Home() {
         </RevealSection>
         <RevealSection delay={160}>
           <p className="cta-sub">
-            I&apos;m currently taking on new projects — AI tools, automations, extensions, and
-            everything in between. Tell me what you&apos;re building.
+            I&apos;m currently taking on new projects — backend systems, data pipelines, cloud
+            infrastructure, and AI integrations. Let&apos;s talk about what you need built.
           </p>
         </RevealSection>
         <RevealSection delay={240}>

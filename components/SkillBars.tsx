@@ -3,14 +3,14 @@
 import { useEffect, useRef } from 'react'
 
 const skills = [
-  { label: 'AI Tools & Agents', pct: 95 },
-  { label: 'Web Dev', pct: 95 },
-  { label: 'Automations', pct: 90 },
-  { label: 'Browser Ext.', pct: 90 },
-  { label: 'Graphic Design', pct: 85 },
-  { label: 'Mobile Dev', pct: 85 },
-  { label: 'AI Skills / MCP', pct: 88 },
-  { label: 'Backend / APIs', pct: 82 },
+  { label: 'Backend & APIs',       pct: 92 },
+  { label: 'Data Engineering',     pct: 88 },
+  { label: 'Cloud / Infra',        pct: 85 },
+  { label: 'Full-Stack Dev',       pct: 90 },
+  { label: 'Python / Automation',  pct: 93 },
+  { label: 'Database Design',      pct: 87 },
+  { label: 'AI Integrations',      pct: 90 },
+  { label: 'System Architecture',  pct: 84 },
 ]
 
 export default function SkillBars() {
